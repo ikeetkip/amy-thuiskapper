@@ -2,18 +2,21 @@
 
 $reservations = [
          [
+            "id" => "1",
             "name" => "Klant",
             "email" => "klant@gmail.com",
             "phone" => "06123456789",
             "time" => "12:00"
         ],
         [
+            "id" => "2",
             "name" => "klant1",
             "email" => "klant1@gmail.com",
             "phone" => "06123456789",
             "time" => "15:00"
         ],
         [
+            "id" => "3",
             "name" => "klant2",
             "email" => "klant2@gmail.com",
             "phone" => "06123456789",
@@ -42,6 +45,7 @@ $reservations = [
     <h2>Reserveringen scherm</h2>
     <table>
         <tr>
+            <th>id</th>
             <th>name</th>
             <th>email</th>
             <th>phone number</th>
@@ -49,10 +53,13 @@ $reservations = [
         </tr>
         <?php foreach ($reservations as $reservation): ?>
         <tr>
+            <td><?= $reservation["id"] ?></td>
             <td><?= $reservation["name"] ?></td>
             <td><?= $reservation["email"] ?></td>
             <td><?= $reservation["phone"] ?></td>
             <td><?= $reservation["time"] ?></td>
+            <td><a href="detail.php?id=<?= $reservation["id"] ?>">details</a></td>
+
         </tr>
         <?php endforeach; ?>
 
